@@ -1,5 +1,7 @@
 # Waypoint Generator
 
+Created by **Qwen 3.6**.
+
 为 [NecronClient-Fabric](https://github.com/SMxNcn/NecronClient-Fabric) 交互式生成农场路径点文件的工具
 
 
