@@ -2,7 +2,7 @@
 
 Created by **Qwen 3.6**.
 
-为 [NecronClient-Fabric](https://github.com/SMxNcn/NecronClient-Fabric) 交互式生成农场路径点文件的工具
+为 [Hkim](https://github.com/SMxNcn/Hkim) 交互式生成农场路径点文件的工具
 
 
 ## 下载与运行
@@ -25,10 +25,10 @@ python main.py
 
 ### 放入游戏目录：
 
-无版本隔离：.minecraft/config/necron/waypoints/
+无版本隔离：.minecraft/config/hkim/waypoints/
 
-有版本隔离（如 MultiMC、官方启动器开启版本隔离）：.minecraft/versions/<版本名>/config/necron/waypoints/
+有版本隔离（如 MultiMC、官方启动器开启版本隔离）：.minecraft/versions/<版本名>/config/hkim/waypoints/
 
 ### 游戏内加载：
 
-详见 [FARMING.md](https://github.com/SMxNcn/NecronClient-Fabric/blob/master/FARMING.md)
+详见 [FARMING.md](https://github.com/SMxNcn/Hkim/blob/master/FARMING.md)
