@@ -38,13 +38,25 @@ def generate_flower_cane(p1, p2, final_end, key_combo, filename):
         return
 
     # 2. 解析按键
-    keys = [k for k in key_combo.upper() if k in 'WSAD']
-    if len(keys) < 2:
-        print("❌ 需要输入 2 个方向键 (如 SD)")
-        return
+    key_combo = key_combo.upper().strip()
 
-    key_odd = parse_action_keys(keys[0], 'flower')
-    key_even = parse_action_keys(keys[1], 'flower')
+    if ',' in key_combo:
+        # 新格式: "WA,WD" -> 奇数行 WA，偶数行 WD
+        parts = [p.strip() for p in key_combo.split(',')]
+        if len(parts) != 2:
+            print("❌ 逗号格式错误，请使用如 WA,WD 的格式")
+            return
+        key_odd_str, key_even_str = parts
+        key_odd = parse_action_keys(key_odd_str, 'flower')
+        key_even = parse_action_keys(key_even_str, 'flower')
+    else:
+        # 旧格式: "SD" -> 两个单字符
+        keys = [k for k in key_combo if k in 'WSAD']
+        if len(keys) < 2:
+            print("❌ 需要输入 2 个方向键 (如 SD)，或使用逗号分隔的多键组合 (如 WA,WD)")
+            return
+        key_odd = parse_action_keys(keys[0], 'flower')
+        key_even = parse_action_keys(keys[1], 'flower')
 
     # 3. 动态生成规律路径点 (直到覆盖终点范围)
     waypoints = []
